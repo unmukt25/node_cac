@@ -1,0 +1,2150 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jul 06, 2026 at 09:32 AM
+-- Server version: 11.8.8-MariaDB-log
+-- PHP Version: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `u606543624_cac`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `68j_a`
+--
+
+CREATE TABLE `68j_a` (
+  `68j_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `FORM_TYPE` int(3) DEFAULT NULL,
+  `PARA_CODE` int(2) DEFAULT NULL,
+  `SUB_PARA` int(3) DEFAULT NULL,
+  `ACCOUNT_GROUP` int(4) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `MEM_CB_CALCULATED` int(9) DEFAULT NULL,
+  `EST_CB_CALCULATED` int(9) DEFAULT NULL,
+  `ADV_AMT_REQUIRED` int(9) DEFAULT NULL,
+  `SANCTIONED_AMOUNT` int(9) DEFAULT NULL,
+  `IFSC_CODE` varchar(30) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alltable_ids`
+--
+
+CREATE TABLE `alltable_ids` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `matching_value` varchar(50) NOT NULL,
+  `system_date` date NOT NULL,
+  `table_name` varchar(50) NOT NULL,
+  `data_upload_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appendix`
+--
+
+CREATE TABLE `appendix` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `UAN` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` varchar(11) DEFAULT NULL,
+  `ACC_GRP_ID` varchar(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(5) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `closed_est`
+--
+
+CREATE TABLE `closed_est` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` varchar(11) DEFAULT NULL,
+  `ACC_GRP_ID` varchar(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(6) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `covid_a`
+--
+
+CREATE TABLE `covid_a` (
+  `covid_id` bigint(20) UNSIGNED NOT NULL,
+  `claim_id` varchar(25) DEFAULT NULL,
+  `member_id` varchar(30) DEFAULT NULL,
+  `form_type` int(2) DEFAULT NULL,
+  `para_code` int(2) DEFAULT NULL,
+  `sub_para` int(3) DEFAULT NULL,
+  `sub_para_category` int(2) DEFAULT NULL,
+  `Account_group` int(4) DEFAULT NULL,
+  `member_name` varchar(100) DEFAULT NULL,
+  `scroll_no` varchar(50) DEFAULT NULL,
+  `scroll_dt` date DEFAULT NULL,
+  `mem_cal_75cent` decimal(9,0) DEFAULT NULL,
+  `est_cal_75cent` decimal(9,0) DEFAULT NULL,
+  `Total_75CENT` decimal(9,0) DEFAULT NULL,
+  `wage1` decimal(9,0) DEFAULT NULL,
+  `wage2` decimal(9,0) DEFAULT NULL,
+  `wage3` decimal(9,0) DEFAULT NULL,
+  `total_wages` decimal(9,0) DEFAULT NULL,
+  `adv_amt_required` decimal(9,0) DEFAULT NULL,
+  `Sanctioned_amount` decimal(9,0) DEFAULT NULL,
+  `ifsc_code` varchar(30) DEFAULT NULL,
+  `account_no` varchar(30) DEFAULT NULL,
+  `dispatch_date` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dob_module`
+--
+
+CREATE TABLE `dob_module` (
+  `dob_id` int(9) NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `FLAG_PD` varchar(1) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(1) DEFAULT NULL,
+  `CCF_TYPE` varchar(1) DEFAULT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `OLD_NAME` varchar(100) DEFAULT NULL,
+  `NEW_NAME` varchar(100) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_FS_NAME` varchar(100) DEFAULT NULL,
+  `NEW_FS_NAME` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(30) DEFAULT NULL,
+  `UPDATION_SOURCE` varchar(200) NOT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `flag_username` tinyint(1) DEFAULT 0,
+  `flag_father` tinyint(1) DEFAULT 0,
+  `flag_dob` tinyint(1) DEFAULT 0,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `form_valid` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `edli`
+--
+
+CREATE TABLE `edli` (
+  `edli_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `EXEMPTION_STATUS` varchar(50) DEFAULT NULL,
+  `ACC_TASK_ID` varchar(30) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `india_zone`
+--
+
+CREATE TABLE `india_zone` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `zone` varchar(50) NOT NULL,
+  `ro` varchar(50) NOT NULL,
+  `ro_code` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `multi_payments`
+--
+
+CREATE TABLE `multi_payments` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACCOUNT_GROUP` decimal(5,0) DEFAULT NULL,
+  `ACC_TASK_ID` decimal(10,0) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `NAME_AS_PER_CLAIM` varchar(100) DEFAULT NULL,
+  `NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `GENDER` varchar(1) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOJ_EPS` date DEFAULT NULL,
+  `DOJ_EPF71` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `DOE_EPS` date DEFAULT NULL,
+  `DOE_EPF71` date DEFAULT NULL,
+  `FORM_TYPE` varchar(20) DEFAULT NULL,
+  `PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `SUB_PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `CREATED_ON` varchar(30) DEFAULT NULL,
+  `APPROVED_ON` varchar(30) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(2) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `NO_TIMES` decimal(3,0) NOT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_DETAILS` varchar(100) DEFAULT NULL,
+  `CASE_STATUS` varchar(30) DEFAULT NULL,
+  `CREATED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `LCM` decimal(8,0) DEFAULT NULL,
+  `flag_username` tinyint(1) DEFAULT NULL,
+  `flag_father` tinyint(1) DEFAULT NULL,
+  `flag_doj` tinyint(1) DEFAULT NULL,
+  `flag_dob` tinyint(1) DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `multi_payments10`
+--
+
+CREATE TABLE `multi_payments10` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACCOUNT_GROUP` decimal(5,0) DEFAULT NULL,
+  `ACC_TASK_ID` decimal(10,0) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `NAME_AS_PER_CLAIM` varchar(100) DEFAULT NULL,
+  `NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `GENDER` varchar(1) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOJ_EPS` date DEFAULT NULL,
+  `DOJ_EPF71` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `DOE_EPS` date DEFAULT NULL,
+  `DOE_EPF71` date DEFAULT NULL,
+  `FORM_TYPE` varchar(20) DEFAULT NULL,
+  `PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `SUB_PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `CREATED_ON` varchar(30) DEFAULT NULL,
+  `APPROVED_ON` varchar(30) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(2) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(10,2) DEFAULT NULL,
+  `NO_TIMES` decimal(3,0) NOT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_DETAILS` varchar(100) DEFAULT NULL,
+  `CASE_STATUS` varchar(30) DEFAULT NULL,
+  `CREATED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `LCM` decimal(7,2) DEFAULT NULL,
+  `flag_username` tinyint(1) DEFAULT NULL,
+  `flag_father` tinyint(1) DEFAULT NULL,
+  `flag_doj` tinyint(1) DEFAULT NULL,
+  `flag_dob` tinyint(1) DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_68j_a`
+--
+
+CREATE TABLE `post_68j_a` (
+  `68j_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `FORM_TYPE` int(3) DEFAULT NULL,
+  `PARA_CODE` int(2) DEFAULT NULL,
+  `SUB_PARA` int(3) DEFAULT NULL,
+  `ACCOUNT_GROUP` int(4) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `MEM_CB_CALCULATED` int(9) DEFAULT NULL,
+  `EST_CB_CALCULATED` int(9) DEFAULT NULL,
+  `ADV_AMT_REQUIRED` int(9) DEFAULT NULL,
+  `SANCTIONED_AMOUNT` int(9) DEFAULT NULL,
+  `IFSC_CODE` varchar(30) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_appendix`
+--
+
+CREATE TABLE `post_appendix` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `appendix_name` varchar(5) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_closed_est`
+--
+
+CREATE TABLE `post_closed_est` (
+  `closed_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `DISPATCH_DATE` date NOT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `appendix_name` varchar(6) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_dob`
+--
+
+CREATE TABLE `post_dob` (
+  `dob_id` int(9) NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(1) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `OLD_NAME` varchar(100) DEFAULT NULL,
+  `NEW_NAME` varchar(100) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_FS_NAME` varchar(100) DEFAULT NULL,
+  `NEW_FS_NAME` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(30) DEFAULT NULL,
+  `REMARKS` varchar(10) DEFAULT NULL,
+  `AUTO_MANUAL` varchar(10) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `flag_username` tinyint(1) NOT NULL,
+  `flag_father` tinyint(1) NOT NULL,
+  `flag_dob` tinyint(1) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `form_valid` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_mult1`
+--
+
+CREATE TABLE `post_mult1` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_GRP_ID` int(4) DEFAULT NULL,
+  `ACC_TASK_ID` int(6) DEFAULT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `MEMBER_NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `PARA_CODE` varchar(3) DEFAULT NULL,
+  `SUB_PARA` varchar(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `CHEQUE_NO` varchar(10) DEFAULT NULL,
+  `CHEQUE_DATE` date DEFAULT NULL,
+  `created_by` varchar(15) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_on` varchar(20) DEFAULT NULL,
+  `APPROVED_BY` varchar(15) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_on` varchar(20) DEFAULT NULL,
+  `Claim_Date` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(10) DEFAULT NULL,
+  `NO_TIMES` int(3) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(3) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_NAME` varchar(100) DEFAULT NULL,
+  `BRANCH_NAME` varchar(100) DEFAULT NULL,
+  `NEFT_CREDIT_DATE` varchar(1) DEFAULT NULL,
+  `created_Name` varchar(100) DEFAULT NULL,
+  `approver_Name` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(3) DEFAULT NULL,
+  `AUTO_MANUAL` varchar(10) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `flag_username` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_father` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_doj` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_dob` tinyint(1) NOT NULL DEFAULT 0,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_mult10`
+--
+
+CREATE TABLE `post_mult10` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_GRP_ID` int(4) DEFAULT NULL,
+  `ACC_TASK_ID` int(6) DEFAULT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `MEMBER_NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `CHEQUE_NO` varchar(10) DEFAULT NULL,
+  `CHEQUE_DATE` date DEFAULT NULL,
+  `created_by` varchar(15) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_on` varchar(20) DEFAULT NULL,
+  `APPROVED_BY` varchar(15) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_on` varchar(20) DEFAULT NULL,
+  `Claim_Date` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(10) DEFAULT NULL,
+  `NO_TIMES` int(3) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(3) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_NAME` varchar(100) DEFAULT NULL,
+  `BRANCH_NAME` varchar(100) DEFAULT NULL,
+  `NEFT_CREDIT_DATE` varchar(1) DEFAULT NULL,
+  `created_Name` varchar(100) DEFAULT NULL,
+  `approver_Name` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `flag_username` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_father` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_doj` tinyint(1) NOT NULL DEFAULT 0,
+  `flag_dob` tinyint(1) NOT NULL DEFAULT 0,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_68j_a`
+--
+
+CREATE TABLE `post_temp_68j_a` (
+  `68j_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `FORM_TYPE` int(3) DEFAULT NULL,
+  `PARA_CODE` int(2) DEFAULT NULL,
+  `SUB_PARA` int(3) DEFAULT NULL,
+  `ACCOUNT_GROUP` int(4) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `MEM_CB_CALCULATED` int(9) DEFAULT NULL,
+  `EST_CB_CALCULATED` int(9) DEFAULT NULL,
+  `ADV_AMT_REQUIRED` int(9) DEFAULT NULL,
+  `SANCTIONED_AMOUNT` int(9) DEFAULT NULL,
+  `IFSC_CODE` varchar(30) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_appendix`
+--
+
+CREATE TABLE `post_temp_appendix` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `appendix_name` varchar(5) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_closed_est`
+--
+
+CREATE TABLE `post_temp_closed_est` (
+  `closed_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `DISPATCH_DATE` date NOT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `appendix_name` varchar(6) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_dob`
+--
+
+CREATE TABLE `post_temp_dob` (
+  `dob_id` int(9) NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(1) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `OLD_NAME` varchar(100) DEFAULT NULL,
+  `NEW_NAME` varchar(100) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_FS_NAME` varchar(100) DEFAULT NULL,
+  `NEW_FS_NAME` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(30) DEFAULT NULL,
+  `REMARKS` varchar(10) DEFAULT NULL,
+  `AUTO_MANUAL` varchar(10) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_mult1`
+--
+
+CREATE TABLE `post_temp_mult1` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_GRP_ID` int(4) DEFAULT NULL,
+  `ACC_TASK_ID` int(6) DEFAULT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `MEMBER_NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `PARA_CODE` varchar(3) DEFAULT NULL,
+  `SUB_PARA` varchar(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `CHEQUE_NO` varchar(10) DEFAULT NULL,
+  `CHEQUE_DATE` date DEFAULT NULL,
+  `created_by` varchar(15) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_on` varchar(20) DEFAULT NULL,
+  `APPROVED_BY` varchar(15) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_on` varchar(20) DEFAULT NULL,
+  `Claim_Date` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(10) DEFAULT NULL,
+  `NO_TIMES` int(3) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(3) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_NAME` varchar(100) DEFAULT NULL,
+  `BRANCH_NAME` varchar(100) DEFAULT NULL,
+  `NEFT_CREDIT_DATE` varchar(1) DEFAULT NULL,
+  `created_Name` varchar(100) DEFAULT NULL,
+  `approver_Name` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(3) DEFAULT NULL,
+  `AUTO_MANUAL` varchar(10) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_mult10`
+--
+
+CREATE TABLE `post_temp_mult10` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_GRP_ID` int(4) DEFAULT NULL,
+  `ACC_TASK_ID` int(6) DEFAULT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `MEMBER_NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `CHEQUE_NO` varchar(10) DEFAULT NULL,
+  `CHEQUE_DATE` date DEFAULT NULL,
+  `created_by` varchar(15) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_on` varchar(20) DEFAULT NULL,
+  `APPROVED_BY` varchar(15) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_on` varchar(20) DEFAULT NULL,
+  `Claim_Date` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(10) DEFAULT NULL,
+  `NO_TIMES` int(3) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(3) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_NAME` varchar(100) DEFAULT NULL,
+  `BRANCH_NAME` varchar(100) DEFAULT NULL,
+  `NEFT_CREDIT_DATE` varchar(1) DEFAULT NULL,
+  `created_Name` varchar(100) DEFAULT NULL,
+  `approver_Name` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_temp_zero_ob`
+--
+
+CREATE TABLE `post_temp_zero_ob` (
+  `zero_ob_id` bigint(20) UNSIGNED NOT NULL,
+  `EST_ID` varchar(20) DEFAULT NULL,
+  `ACCGRP` int(4) DEFAULT NULL,
+  `TASK` int(7) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `ACC_YEAR` int(4) DEFAULT NULL,
+  `CREATED_BY` int(10) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `CREATED_REMARKS` varchar(100) DEFAULT NULL,
+  `VERIFIED_BY` int(10) DEFAULT NULL,
+  `VERIFIED_DATE` date DEFAULT NULL,
+  `VERIFIED_REMARKS` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` int(10) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_REMARKS` varchar(50) DEFAULT NULL,
+  `CURRENT_STATUS` varchar(50) DEFAULT NULL,
+  `APPE_STATUS` varchar(17) DEFAULT NULL,
+  `NAME_CHANGE` varchar(50) DEFAULT NULL,
+  `ECR_STATUS` varchar(50) DEFAULT NULL,
+  `EST_STATUS` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_zero_ob`
+--
+
+CREATE TABLE `post_zero_ob` (
+  `zero_ob_id` bigint(20) UNSIGNED NOT NULL,
+  `EST_ID` varchar(20) DEFAULT NULL,
+  `ACCGRP` int(4) DEFAULT NULL,
+  `TASK` int(7) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `ACC_YEAR` int(4) DEFAULT NULL,
+  `CREATED_BY` int(10) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `CREATED_REMARKS` varchar(100) DEFAULT NULL,
+  `VERIFIED_BY` int(10) DEFAULT NULL,
+  `VERIFIED_DATE` date DEFAULT NULL,
+  `VERIFIED_REMARKS` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` int(10) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_REMARKS` varchar(50) DEFAULT NULL,
+  `CURRENT_STATUS` varchar(50) DEFAULT NULL,
+  `APPE_STATUS` varchar(17) DEFAULT NULL,
+  `NAME_CHANGE` varchar(50) DEFAULT NULL,
+  `ECR_STATUS` varchar(50) DEFAULT NULL,
+  `EST_STATUS` varchar(50) DEFAULT NULL,
+  `period_from` date NOT NULL,
+  `period_to` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ppo`
+--
+
+CREATE TABLE `ppo` (
+  `ppo_id` bigint(20) UNSIGNED NOT NULL,
+  `CID` varchar(20) DEFAULT NULL,
+  `MID` varchar(30) DEFAULT NULL,
+  `OLD_PPO_NO` varchar(20) DEFAULT NULL,
+  `NEW_PPO_NO` varchar(20) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_DOJ_EPF71` date DEFAULT NULL,
+  `NEW_DOJ_EPF71` date DEFAULT NULL,
+  `OLD_DOJ_EPS` date DEFAULT NULL,
+  `NEW_DOJ_EPS` date DEFAULT NULL,
+  `OLD_DOE` date DEFAULT NULL,
+  `NEW_DOE` date DEFAULT NULL,
+  `OLD_PAST_SERVICE` int(3) DEFAULT NULL,
+  `NEW_PAST_SERVICE` int(3) DEFAULT NULL,
+  `OLD_ACTUAL_SERVICE` date DEFAULT NULL,
+  `NEW_ACTUAL_SERVICE` date DEFAULT NULL,
+  `OLD_NCP` int(10) DEFAULT NULL,
+  `NEW_NCP` int(10) DEFAULT NULL,
+  `OLD_PENSION_SERVICE` int(3) DEFAULT NULL,
+  `NEW_PENSION_SERVICE` int(3) DEFAULT NULL,
+  `OLD_PENSIONABLE_SALARY` int(8) DEFAULT NULL,
+  `NEW_PENSIONABLE_SALARY` int(8) DEFAULT NULL,
+  `OLD_ORIGINAL_PENSION` int(8) DEFAULT NULL,
+  `NEW_ORIGINAL_PENSION` int(8) DEFAULT NULL,
+  `OLD_DATE_PEN_PAY` date DEFAULT NULL,
+  `NEW_DATE_PEN_PAY` date DEFAULT NULL,
+  `OLD_REDUCED_MONTHLY_PENSION` int(8) DEFAULT NULL,
+  `NEW_REDUCED_MONTHLY_PENSION` int(8) DEFAULT NULL,
+  `CLAIM_STATUS` varchar(50) DEFAULT NULL,
+  `OLD_PPO_DATE` date DEFAULT NULL,
+  `NEW_PPO_DATE` date DEFAULT NULL,
+  `OLD_WAGE` int(8) DEFAULT NULL,
+  `NEW_WAGE` int(8) DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `ACC_TASK_ID` varchar(10) NOT NULL COMMENT 'to add taskid 90901'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ro_verify_alert`
+--
+
+CREATE TABLE `ro_verify_alert` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `date_generated` date NOT NULL,
+  `foreign_row_id` bigint(20) UNSIGNED NOT NULL,
+  `claim_member_id` varchar(30) NOT NULL,
+  `section_name` varchar(30) NOT NULL,
+  `so_assign_name` varchar(100) DEFAULT NULL,
+  `so_assign_date` date DEFAULT NULL,
+  `so_submit_name` varchar(100) DEFAULT NULL,
+  `so_submit_date` date DEFAULT NULL,
+  `initiator_name` varchar(100) DEFAULT NULL,
+  `initiator_date` date DEFAULT NULL,
+  `initiator_remark` varchar(500) DEFAULT NULL,
+  `verifier_name` varchar(100) DEFAULT NULL,
+  `verifier_date` date DEFAULT NULL,
+  `verifier_remark` varchar(100) DEFAULT NULL COMMENT '0=carry forward',
+  `approver_name` varchar(100) DEFAULT NULL,
+  `approver_date` date DEFAULT NULL,
+  `approver_remark` varchar(100) DEFAULT NULL COMMENT '0=verified,1=not matched',
+  `creation_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_68j_a`
+--
+
+CREATE TABLE `temp_68j_a` (
+  `68j_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(20) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `FORM_TYPE` int(3) DEFAULT NULL,
+  `PARA_CODE` int(2) DEFAULT NULL,
+  `SUB_PARA` int(3) DEFAULT NULL,
+  `ACCOUNT_GROUP` int(4) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `SCROLL_NO` varchar(50) DEFAULT NULL,
+  `SCROLL_DT` date DEFAULT NULL,
+  `MEM_CB_CALCULATED` int(9) DEFAULT NULL,
+  `EST_CB_CALCULATED` int(9) DEFAULT NULL,
+  `ADV_AMT_REQUIRED` int(9) DEFAULT NULL,
+  `SANCTIONED_AMOUNT` int(9) DEFAULT NULL,
+  `IFSC_CODE` varchar(30) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_appendix`
+--
+
+CREATE TABLE `temp_appendix` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `UAN` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(5) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_appendix_backup`
+--
+
+CREATE TABLE `temp_appendix_backup` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `UAN` varchar(20) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(5) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_closed_est`
+--
+
+CREATE TABLE `temp_closed_est` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(6) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_closed_est_backup`
+--
+
+CREATE TABLE `temp_closed_est_backup` (
+  `apx_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `ACC_TASK_ID` int(11) DEFAULT NULL,
+  `ACC_GRP_ID` int(11) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `FORM_TYPE` varchar(25) DEFAULT NULL,
+  `PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CODE` int(11) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(3) DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(11,2) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(25) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `CREATED_BY` varchar(20) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `APPROVED_BY` varchar(20) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `LCM_MMYYYY` varchar(10) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `SPOUSE_NAME` varchar(100) DEFAULT NULL,
+  `APPE_STATUS` varchar(20) DEFAULT NULL,
+  `NAME_CHANGE` varchar(40) DEFAULT NULL,
+  `ECR_STATUS` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(10) DEFAULT NULL,
+  `ZERO_BAL_STATUS` varchar(15) DEFAULT NULL,
+  `VDR_SPL_STATUS` varchar(15) DEFAULT NULL,
+  `LVL_TYPE` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `appendix_name` varchar(6) NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_covid_a`
+--
+
+CREATE TABLE `temp_covid_a` (
+  `covid_id` bigint(20) UNSIGNED NOT NULL,
+  `claim_id` varchar(25) DEFAULT NULL,
+  `member_id` varchar(30) DEFAULT NULL,
+  `form_type` int(2) DEFAULT NULL,
+  `para_code` int(2) DEFAULT NULL,
+  `sub_para` int(3) DEFAULT NULL,
+  `sub_para_category` int(2) DEFAULT NULL,
+  `Account_group` int(4) DEFAULT NULL,
+  `member_name` varchar(100) DEFAULT NULL,
+  `scroll_no` varchar(50) DEFAULT NULL,
+  `scroll_dt` date DEFAULT NULL,
+  `mem_cal_75cent` decimal(9,0) DEFAULT NULL,
+  `est_cal_75cent` decimal(9,0) DEFAULT NULL,
+  `Total_75CENT` decimal(9,0) DEFAULT NULL,
+  `wage1` decimal(9,0) DEFAULT NULL,
+  `wage2` decimal(9,0) DEFAULT NULL,
+  `wage3` decimal(9,0) DEFAULT NULL,
+  `total_wages` decimal(9,0) DEFAULT NULL,
+  `adv_amt_required` decimal(9,0) DEFAULT NULL,
+  `Sanctioned_amount` decimal(9,0) DEFAULT NULL,
+  `ifsc_code` varchar(30) DEFAULT NULL,
+  `account_no` varchar(30) DEFAULT NULL,
+  `dispatch_date` date DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_dob_module`
+--
+
+CREATE TABLE `temp_dob_module` (
+  `dob_id` int(9) NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `FLAG_PD` varchar(1) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CODE` int(3) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(1) DEFAULT NULL,
+  `CCF_TYPE` varchar(1) DEFAULT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `OLD_NAME` varchar(100) DEFAULT NULL,
+  `NEW_NAME` varchar(100) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_FS_NAME` varchar(100) DEFAULT NULL,
+  `NEW_FS_NAME` varchar(100) DEFAULT NULL,
+  `UCD_STATUS` varchar(30) DEFAULT NULL,
+  `UPDATION_SOURCE` varchar(200) NOT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `ready_to_move` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_edli`
+--
+
+CREATE TABLE `temp_edli` (
+  `edli_id` bigint(20) UNSIGNED NOT NULL,
+  `CLAIM_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `EST_NAME` varchar(100) DEFAULT NULL,
+  `EXEMPTION_STATUS` varchar(50) DEFAULT NULL,
+  `ACC_TASK_ID` varchar(30) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_multi_payments`
+--
+
+CREATE TABLE `temp_multi_payments` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACCOUNT_GROUP` decimal(5,0) DEFAULT NULL,
+  `ACC_TASK_ID` decimal(10,0) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `NAME_AS_PER_CLAIM` varchar(100) DEFAULT NULL,
+  `NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `GENDER` varchar(1) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOJ_EPS` date DEFAULT NULL,
+  `DOJ_EPF71` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `DOE_EPS` date DEFAULT NULL,
+  `DOE_EPF71` date DEFAULT NULL,
+  `FORM_TYPE` varchar(20) DEFAULT NULL,
+  `PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `SUB_PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `CREATED_ON` varchar(30) DEFAULT NULL,
+  `APPROVED_ON` varchar(30) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(2) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(10,2) DEFAULT NULL,
+  `NO_TIMES` decimal(3,0) NOT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_DETAILS` varchar(100) DEFAULT NULL,
+  `CASE_STATUS` varchar(30) DEFAULT NULL,
+  `CREATED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `LCM` decimal(8,0) DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `ready_to_move` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_multi_payments10`
+--
+
+CREATE TABLE `temp_multi_payments10` (
+  `row_id` bigint(20) UNSIGNED NOT NULL,
+  `ACCOUNT_GROUP` decimal(5,0) DEFAULT NULL,
+  `ACC_TASK_ID` decimal(10,0) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) NOT NULL,
+  `MEMBER_ID` varchar(25) DEFAULT NULL,
+  `NAME_AS_PER_CLAIM` varchar(100) DEFAULT NULL,
+  `NAME_AS_PER_MEMBER_MASTER` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `GENDER` varchar(1) DEFAULT NULL,
+  `DOB` date DEFAULT NULL,
+  `DOJ_EPF` date DEFAULT NULL,
+  `DOJ_EPS` date DEFAULT NULL,
+  `DOJ_EPF71` date DEFAULT NULL,
+  `DOE_EPF` date DEFAULT NULL,
+  `DOE_EPS` date DEFAULT NULL,
+  `DOE_EPF71` date DEFAULT NULL,
+  `FORM_TYPE` varchar(20) DEFAULT NULL,
+  `PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `SUB_PARA_CODE` decimal(3,0) DEFAULT NULL,
+  `CREATED_ON` varchar(30) DEFAULT NULL,
+  `APPROVED_ON` varchar(30) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `PAYMENT_MODE` varchar(2) DEFAULT NULL,
+  `DISPATCH_DATE` date DEFAULT NULL,
+  `TOTAL_AMOUNT` decimal(10,2) DEFAULT NULL,
+  `NO_TIMES` decimal(3,0) NOT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `IFSC_CODE` varchar(20) DEFAULT NULL,
+  `BANK_DETAILS` varchar(100) DEFAULT NULL,
+  `CASE_STATUS` varchar(30) DEFAULT NULL,
+  `CREATED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` varchar(100) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `LCM` decimal(8,0) DEFAULT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `ready_to_move` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_ppo`
+--
+
+CREATE TABLE `temp_ppo` (
+  `ppo_id` bigint(20) UNSIGNED NOT NULL,
+  `CID` varchar(20) DEFAULT NULL,
+  `MID` varchar(30) DEFAULT NULL,
+  `OLD_PPO_NO` varchar(20) DEFAULT NULL,
+  `NEW_PPO_NO` varchar(20) DEFAULT NULL,
+  `OLD_DOB` date DEFAULT NULL,
+  `NEW_DOB` date DEFAULT NULL,
+  `OLD_DOJ_EPF71` date DEFAULT NULL,
+  `NEW_DOJ_EPF71` date DEFAULT NULL,
+  `OLD_DOJ_EPS` date DEFAULT NULL,
+  `NEW_DOJ_EPS` date DEFAULT NULL,
+  `OLD_DOE` date DEFAULT NULL,
+  `NEW_DOE` date DEFAULT NULL,
+  `OLD_PAST_SERVICE` int(3) DEFAULT NULL,
+  `NEW_PAST_SERVICE` int(3) DEFAULT NULL,
+  `OLD_ACTUAL_SERVICE` date DEFAULT NULL,
+  `NEW_ACTUAL_SERVICE` date DEFAULT NULL,
+  `OLD_NCP` int(10) DEFAULT NULL,
+  `NEW_NCP` int(10) DEFAULT NULL,
+  `OLD_PENSION_SERVICE` int(3) DEFAULT NULL,
+  `NEW_PENSION_SERVICE` int(3) DEFAULT NULL,
+  `OLD_PENSIONABLE_SALARY` int(8) DEFAULT NULL,
+  `NEW_PENSIONABLE_SALARY` int(8) DEFAULT NULL,
+  `OLD_ORIGINAL_PENSION` int(8) DEFAULT NULL,
+  `NEW_ORIGINAL_PENSION` int(8) DEFAULT NULL,
+  `OLD_DATE_PEN_PAY` date DEFAULT NULL,
+  `NEW_DATE_PEN_PAY` date DEFAULT NULL,
+  `OLD_REDUCED_MONTHLY_PENSION` int(8) DEFAULT NULL,
+  `NEW_REDUCED_MONTHLY_PENSION` int(8) DEFAULT NULL,
+  `CLAIM_STATUS` varchar(50) DEFAULT NULL,
+  `OLD_PPO_DATE` date DEFAULT NULL,
+  `NEW_PPO_DATE` date DEFAULT NULL,
+  `OLD_WAGE` int(8) DEFAULT NULL,
+  `NEW_WAGE` int(8) DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_top50`
+--
+
+CREATE TABLE `temp_top50` (
+  `top50_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `PARA_CODE` varchar(4) DEFAULT NULL,
+  `SUB_PARA_CODE` varchar(4) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `UAN` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `IFSC` varchar(20) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `UCD_STATUS` varchar(20) DEFAULT NULL,
+  `LCM` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(15) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` date NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_zero_ob`
+--
+
+CREATE TABLE `temp_zero_ob` (
+  `zero_ob_id` bigint(20) UNSIGNED NOT NULL,
+  `EST_ID` varchar(20) DEFAULT NULL,
+  `ACCGRP` int(4) DEFAULT NULL,
+  `TASK` int(7) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `ACC_YEAR` int(4) DEFAULT NULL,
+  `CREATED_BY` int(10) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `CREATED_REMARKS` varchar(100) DEFAULT NULL,
+  `VERIFIED_BY` int(10) DEFAULT NULL,
+  `VERIFIED_DATE` date DEFAULT NULL,
+  `VERIFIED_REMARKS` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` int(10) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_REMARKS` varchar(50) DEFAULT NULL,
+  `CURRENT_STATUS` varchar(50) DEFAULT NULL,
+  `APPE_STATUS` varchar(17) DEFAULT NULL,
+  `NAME_CHANGE` varchar(50) DEFAULT NULL,
+  `ECR_STATUS` varchar(50) DEFAULT NULL,
+  `EST_STATUS` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp(),
+  `data_valid` tinyint(1) NOT NULL DEFAULT 0,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `top50`
+--
+
+CREATE TABLE `top50` (
+  `top50_id` bigint(20) UNSIGNED NOT NULL,
+  `ACC_TASK_ID` int(7) DEFAULT NULL,
+  `NAME` varchar(100) DEFAULT NULL,
+  `ACC_GRP_ID` int(5) DEFAULT NULL,
+  `CLAIM_ID` varchar(25) DEFAULT NULL,
+  `FORM_TYPE` varchar(30) DEFAULT NULL,
+  `PARA_CODE` varchar(4) DEFAULT NULL,
+  `SUB_PARA_CODE` varchar(4) DEFAULT NULL,
+  `SUB_PARA_CATEGORY` varchar(2) DEFAULT NULL,
+  `UAN` varchar(30) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `FATHER_NAME` varchar(100) DEFAULT NULL,
+  `RECEIPT_DATE` date DEFAULT NULL,
+  `CLAIM_PASSED_BY` varchar(100) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `CLAIM_APPROVED_BY` varchar(100) DEFAULT NULL,
+  `AMOUNT` decimal(11,2) DEFAULT NULL,
+  `IFSC` varchar(20) DEFAULT NULL,
+  `ACCOUNT_NO` varchar(30) DEFAULT NULL,
+  `UCD_STATUS` varchar(20) DEFAULT NULL,
+  `LCM` varchar(20) DEFAULT NULL,
+  `ONLINE_PHYSICAL` varchar(15) DEFAULT NULL,
+  `SYSTEM_DATE` date DEFAULT NULL,
+  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_login_log`
+--
+
+CREATE TABLE `user_login_log` (
+  `row_id` mediumint(8) UNSIGNED NOT NULL,
+  `user_id` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `datetime_login` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_mapping`
+--
+
+CREATE TABLE `user_mapping` (
+  `map_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `mapped_name` varchar(100) NOT NULL,
+  `mapped_username` varchar(100) NOT NULL,
+  `location` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zero_ob`
+--
+
+CREATE TABLE `zero_ob` (
+  `zero_ob_id` bigint(20) UNSIGNED NOT NULL,
+  `EST_ID` varchar(20) DEFAULT NULL,
+  `ACCGRP` int(4) DEFAULT NULL,
+  `TASK` int(7) DEFAULT NULL,
+  `MEMBER_ID` varchar(30) DEFAULT NULL,
+  `MEMBER_NAME` varchar(100) DEFAULT NULL,
+  `ACC_YEAR` int(4) DEFAULT NULL,
+  `CREATED_BY` int(10) DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `CREATED_REMARKS` varchar(100) DEFAULT NULL,
+  `VERIFIED_BY` int(10) DEFAULT NULL,
+  `VERIFIED_DATE` date DEFAULT NULL,
+  `VERIFIED_REMARKS` varchar(100) DEFAULT NULL,
+  `APPROVED_BY` int(10) DEFAULT NULL,
+  `APPROVED_DATE` date DEFAULT NULL,
+  `APPROVED_REMARKS` varchar(50) DEFAULT NULL,
+  `CURRENT_STATUS` varchar(50) DEFAULT NULL,
+  `APPE_STATUS` varchar(17) DEFAULT NULL,
+  `NAME_CHANGE` varchar(50) DEFAULT NULL,
+  `ECR_STATUS` varchar(50) DEFAULT NULL,
+  `EST_STATUS` varchar(50) DEFAULT NULL,
+  `SYSTEM_DATE` date NOT NULL,
+  `date_uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `68j_a`
+--
+ALTER TABLE `68j_a`
+  ADD PRIMARY KEY (`68j_id`);
+
+--
+-- Indexes for table `alltable_ids`
+--
+ALTER TABLE `alltable_ids`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `appendix`
+--
+ALTER TABLE `appendix`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `closed_est`
+--
+ALTER TABLE `closed_est`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `covid_a`
+--
+ALTER TABLE `covid_a`
+  ADD PRIMARY KEY (`covid_id`);
+
+--
+-- Indexes for table `dob_module`
+--
+ALTER TABLE `dob_module`
+  ADD PRIMARY KEY (`dob_id`) USING BTREE;
+
+--
+-- Indexes for table `edli`
+--
+ALTER TABLE `edli`
+  ADD PRIMARY KEY (`edli_id`);
+
+--
+-- Indexes for table `india_zone`
+--
+ALTER TABLE `india_zone`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `multi_payments`
+--
+ALTER TABLE `multi_payments`
+  ADD PRIMARY KEY (`row_id`),
+  ADD KEY `ACCOUNT_NO` (`ACCOUNT_NO`(10)) USING BTREE;
+
+--
+-- Indexes for table `multi_payments10`
+--
+ALTER TABLE `multi_payments10`
+  ADD PRIMARY KEY (`row_id`),
+  ADD KEY `ACCOUNT_NO` (`ACCOUNT_NO`);
+
+--
+-- Indexes for table `post_68j_a`
+--
+ALTER TABLE `post_68j_a`
+  ADD PRIMARY KEY (`68j_id`);
+
+--
+-- Indexes for table `post_appendix`
+--
+ALTER TABLE `post_appendix`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `post_closed_est`
+--
+ALTER TABLE `post_closed_est`
+  ADD PRIMARY KEY (`closed_id`);
+
+--
+-- Indexes for table `post_dob`
+--
+ALTER TABLE `post_dob`
+  ADD PRIMARY KEY (`dob_id`) USING BTREE;
+
+--
+-- Indexes for table `post_mult1`
+--
+ALTER TABLE `post_mult1`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `post_mult10`
+--
+ALTER TABLE `post_mult10`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `post_temp_68j_a`
+--
+ALTER TABLE `post_temp_68j_a`
+  ADD PRIMARY KEY (`68j_id`);
+
+--
+-- Indexes for table `post_temp_appendix`
+--
+ALTER TABLE `post_temp_appendix`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `post_temp_closed_est`
+--
+ALTER TABLE `post_temp_closed_est`
+  ADD PRIMARY KEY (`closed_id`);
+
+--
+-- Indexes for table `post_temp_dob`
+--
+ALTER TABLE `post_temp_dob`
+  ADD PRIMARY KEY (`dob_id`) USING BTREE;
+
+--
+-- Indexes for table `post_temp_mult1`
+--
+ALTER TABLE `post_temp_mult1`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `post_temp_mult10`
+--
+ALTER TABLE `post_temp_mult10`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `post_temp_zero_ob`
+--
+ALTER TABLE `post_temp_zero_ob`
+  ADD PRIMARY KEY (`zero_ob_id`);
+
+--
+-- Indexes for table `post_zero_ob`
+--
+ALTER TABLE `post_zero_ob`
+  ADD PRIMARY KEY (`zero_ob_id`);
+
+--
+-- Indexes for table `ppo`
+--
+ALTER TABLE `ppo`
+  ADD PRIMARY KEY (`ppo_id`);
+
+--
+-- Indexes for table `ro_verify_alert`
+--
+ALTER TABLE `ro_verify_alert`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `temp_68j_a`
+--
+ALTER TABLE `temp_68j_a`
+  ADD PRIMARY KEY (`68j_id`);
+
+--
+-- Indexes for table `temp_appendix`
+--
+ALTER TABLE `temp_appendix`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `temp_appendix_backup`
+--
+ALTER TABLE `temp_appendix_backup`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `temp_closed_est`
+--
+ALTER TABLE `temp_closed_est`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `temp_closed_est_backup`
+--
+ALTER TABLE `temp_closed_est_backup`
+  ADD PRIMARY KEY (`apx_id`);
+
+--
+-- Indexes for table `temp_covid_a`
+--
+ALTER TABLE `temp_covid_a`
+  ADD PRIMARY KEY (`covid_id`);
+
+--
+-- Indexes for table `temp_dob_module`
+--
+ALTER TABLE `temp_dob_module`
+  ADD PRIMARY KEY (`dob_id`) USING BTREE;
+
+--
+-- Indexes for table `temp_edli`
+--
+ALTER TABLE `temp_edli`
+  ADD PRIMARY KEY (`edli_id`);
+
+--
+-- Indexes for table `temp_multi_payments`
+--
+ALTER TABLE `temp_multi_payments`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `temp_multi_payments10`
+--
+ALTER TABLE `temp_multi_payments10`
+  ADD PRIMARY KEY (`row_id`),
+  ADD KEY `ACCOUNT_NO` (`ACCOUNT_NO`);
+
+--
+-- Indexes for table `temp_ppo`
+--
+ALTER TABLE `temp_ppo`
+  ADD PRIMARY KEY (`ppo_id`);
+
+--
+-- Indexes for table `temp_top50`
+--
+ALTER TABLE `temp_top50`
+  ADD PRIMARY KEY (`top50_id`);
+
+--
+-- Indexes for table `temp_zero_ob`
+--
+ALTER TABLE `temp_zero_ob`
+  ADD PRIMARY KEY (`zero_ob_id`);
+
+--
+-- Indexes for table `top50`
+--
+ALTER TABLE `top50`
+  ADD PRIMARY KEY (`top50_id`);
+
+--
+-- Indexes for table `user_login_log`
+--
+ALTER TABLE `user_login_log`
+  ADD PRIMARY KEY (`row_id`);
+
+--
+-- Indexes for table `user_mapping`
+--
+ALTER TABLE `user_mapping`
+  ADD PRIMARY KEY (`map_id`);
+
+--
+-- Indexes for table `zero_ob`
+--
+ALTER TABLE `zero_ob`
+  ADD PRIMARY KEY (`zero_ob_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `68j_a`
+--
+ALTER TABLE `68j_a`
+  MODIFY `68j_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `alltable_ids`
+--
+ALTER TABLE `alltable_ids`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `appendix`
+--
+ALTER TABLE `appendix`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `closed_est`
+--
+ALTER TABLE `closed_est`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `covid_a`
+--
+ALTER TABLE `covid_a`
+  MODIFY `covid_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `dob_module`
+--
+ALTER TABLE `dob_module`
+  MODIFY `dob_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `edli`
+--
+ALTER TABLE `edli`
+  MODIFY `edli_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `india_zone`
+--
+ALTER TABLE `india_zone`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `multi_payments`
+--
+ALTER TABLE `multi_payments`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `multi_payments10`
+--
+ALTER TABLE `multi_payments10`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_68j_a`
+--
+ALTER TABLE `post_68j_a`
+  MODIFY `68j_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_appendix`
+--
+ALTER TABLE `post_appendix`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_closed_est`
+--
+ALTER TABLE `post_closed_est`
+  MODIFY `closed_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_dob`
+--
+ALTER TABLE `post_dob`
+  MODIFY `dob_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_mult1`
+--
+ALTER TABLE `post_mult1`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_mult10`
+--
+ALTER TABLE `post_mult10`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_68j_a`
+--
+ALTER TABLE `post_temp_68j_a`
+  MODIFY `68j_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_appendix`
+--
+ALTER TABLE `post_temp_appendix`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_closed_est`
+--
+ALTER TABLE `post_temp_closed_est`
+  MODIFY `closed_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_dob`
+--
+ALTER TABLE `post_temp_dob`
+  MODIFY `dob_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_mult1`
+--
+ALTER TABLE `post_temp_mult1`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_mult10`
+--
+ALTER TABLE `post_temp_mult10`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_temp_zero_ob`
+--
+ALTER TABLE `post_temp_zero_ob`
+  MODIFY `zero_ob_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post_zero_ob`
+--
+ALTER TABLE `post_zero_ob`
+  MODIFY `zero_ob_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ppo`
+--
+ALTER TABLE `ppo`
+  MODIFY `ppo_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ro_verify_alert`
+--
+ALTER TABLE `ro_verify_alert`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_68j_a`
+--
+ALTER TABLE `temp_68j_a`
+  MODIFY `68j_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_appendix`
+--
+ALTER TABLE `temp_appendix`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_appendix_backup`
+--
+ALTER TABLE `temp_appendix_backup`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_closed_est`
+--
+ALTER TABLE `temp_closed_est`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_closed_est_backup`
+--
+ALTER TABLE `temp_closed_est_backup`
+  MODIFY `apx_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_covid_a`
+--
+ALTER TABLE `temp_covid_a`
+  MODIFY `covid_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_dob_module`
+--
+ALTER TABLE `temp_dob_module`
+  MODIFY `dob_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_edli`
+--
+ALTER TABLE `temp_edli`
+  MODIFY `edli_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_multi_payments`
+--
+ALTER TABLE `temp_multi_payments`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_multi_payments10`
+--
+ALTER TABLE `temp_multi_payments10`
+  MODIFY `row_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_ppo`
+--
+ALTER TABLE `temp_ppo`
+  MODIFY `ppo_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_top50`
+--
+ALTER TABLE `temp_top50`
+  MODIFY `top50_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_zero_ob`
+--
+ALTER TABLE `temp_zero_ob`
+  MODIFY `zero_ob_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `top50`
+--
+ALTER TABLE `top50`
+  MODIFY `top50_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_login_log`
+--
+ALTER TABLE `user_login_log`
+  MODIFY `row_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user_mapping`
+--
+ALTER TABLE `user_mapping`
+  MODIFY `map_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `zero_ob`
+--
+ALTER TABLE `zero_ob`
+  MODIFY `zero_ob_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
