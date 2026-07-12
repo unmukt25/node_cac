@@ -4,9 +4,10 @@ const router = express.Router();
 
 // Health Check
 router.get("/", (req, res) => {
+
     res.json({
         success: true,
-        message: "CAC API v1"
+        message: "CAC API v1 "
     });
 });
 
