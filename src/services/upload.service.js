@@ -1,23 +1,39 @@
+const csvService = require("./csv.service");
+const fileUtil = require("../utils/file.util");
+
 const upload = async (files) => {
 
     if (!files || files.length === 0) {
-        const err = new Error("Please select one or more CSV files.");
-        err.statusCode = 400;
-        throw err;
+        throw new Error("Please select one or more CSV files.");
     }
 
-    const uploadedFiles = files.map(file => ({
-        originalName: file.originalname,
-        storedName: file.filename,
-        path: file.path,
-        size: file.size
-    }));
+    const uploaded = [];
 
-    return {
-        message: `${uploadedFiles.length} file(s) uploaded successfully.`,
-        data: uploadedFiles
-    };
-};
+    try {
+
+        for (const file of files) {
+
+            const result = await csvService.importCsv(file);
+
+            uploaded.push(result);
+
+        }
+
+        return {
+            message: "Files uploaded successfully.",
+            data: uploaded
+        };
+
+    } catch (error) {
+
+        // Delete every uploaded file
+        for (const file of files) {
+            fileUtil.deleteFile(file.path);
+        }
+
+        throw error;
+    }
+}
 
 module.exports = {
     upload
