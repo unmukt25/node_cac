@@ -16,7 +16,8 @@ const importCsv = async (file) => {
     // logic to change  "TO_CHAR(SYSDATE,'DD/MM/YYYY')", to   "SYSTEM_DATE"
     const dbFileInfo = {
         ...fileInfo,
-        headers: [...fileInfo.headers]
+        headers: [...fileInfo.headers],
+        dateColumns: [...fileInfo.dateColumns]
     };
 
     dbFileInfo.headers[31] = "SYSTEM_DATE";
@@ -24,12 +25,10 @@ const importCsv = async (file) => {
     // 3. Parse CSV
     const rows = await parseCsv(file.path, dbFileInfo);
 
-    console.log(rows[0]);
 
     // 4. Batch Insert into Temp Table
     await tempDataRepository.batchInsert(
-        fileInfo.tempTable,
-        fileInfo.headers,
+        dbFileInfo.tempTable,
         rows
     );
 
