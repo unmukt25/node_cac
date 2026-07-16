@@ -12,7 +12,9 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
 
-    multipleStatements: true
+    multipleStatements: true, 
+
+    dateStrings: ['DATE']  /***** added this to get date in IST formate 2026-06-02 00:00:00 IST = 2026-06-01 18:30:00 UTC */
 });
 
 module.exports = pool;

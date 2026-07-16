@@ -28,7 +28,7 @@ const importCsv = async (file) => {
 
     // 4. Batch Insert into Temp Table
     await tempDataRepository.batchInsert(
-        dbFileInfo.tempTable,
+        dbFileInfo,
         rows
     );
 

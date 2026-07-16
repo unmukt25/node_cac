@@ -1,10 +1,12 @@
 const db = require("../config/database");
 
+const processService = require("../services/process.service");
+
 const BATCH_SIZE = 1000;
 /**
  * Batch insert rows into a temporary table
  */
-const batchInsert = async (tableName, rows) => {
+const batchInsert = async (fileInfo, rows) => {
 
     if (!rows || rows.length === 0) {
         return;
@@ -19,7 +21,7 @@ const batchInsert = async (tableName, rows) => {
         const columns = Object.keys(rows[0]);
 
         const sql = `
-            INSERT INTO \`${tableName}\`
+            INSERT INTO \`${fileInfo.tempTable}\`
             (${columns.map(col => `\`${col}\``).join(",")})
             VALUES ?
         `;
@@ -35,6 +37,10 @@ const batchInsert = async (tableName, rows) => {
             await connection.query(sql, [values]);
         }
 
+        // Execute business logic after temp insert
+        await processService.processImport(connection, fileInfo);
+
+        // Everything succeeded
         await connection.commit();
 
     } catch (error) {
