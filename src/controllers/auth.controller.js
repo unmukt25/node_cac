@@ -4,7 +4,7 @@ const ApiResponse = require("../utils/apiResponse");
 
 const login = asyncHandler(async (req, res) => {
 
-    console.log("req-body:",req.body);
+    // console.log("req-body:",req.body);
 
     const { username, password } = req.body;
     
@@ -20,6 +20,22 @@ const login = asyncHandler(async (req, res) => {
     );
 });
 
+const signup = asyncHandler(async (req, res)=>{
+       
+        const { username, password, fullName, role, isActive } = req.body;
+
+        const userdata = {username,password,fullName,role,isActive};
+
+        const result = await authService.signup(userdata);
+
+        return ApiResponse.success(
+        res,
+        "user creation successful",
+        result
+    );
+});
+
 module.exports = {
-    login
+    login,
+    signup
 };

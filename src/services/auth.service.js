@@ -17,11 +17,11 @@ const login = async (username, password) => {
         );
 
         if (!user) {
-             throw new AppError("Invalid username or password", 401);
+            throw new AppError("Invalid username or password", 401);
         }
 
         if (!user.is_active) {
-             throw new AppError("User account is disabled", 403);
+            throw new AppError("User account is disabled", 403);
         }
 
         const matched = await bcrypt.compare(
@@ -30,7 +30,7 @@ const login = async (username, password) => {
         );
 
         if (!matched) {
-             throw new AppError("Invalid username or password", 401);
+            throw new AppError("Invalid username or password", 401);
         }
 
         const token = generateToken(user);
@@ -50,6 +50,45 @@ const login = async (username, password) => {
     }
 };
 
+const signup = async (userdata) => {
+
+    const connection = await db.getConnection();
+
+    try {
+
+        // Check if username already exists
+        const existingUser = await authRepository.findUserByUsername(
+            connection,
+            userdata.username
+        );
+
+        if (existingUser) {
+            throw new AppError("Username already exists", 409);
+        }
+
+        // Hash password
+        userdata.password = await bcrypt.hash(
+            userdata.password,
+            10
+        );
+
+        // Create user
+        const result = await authRepository.createUser(
+            connection,
+            userdata
+        );
+
+        return {
+            resultId: result
+        };
+
+    } finally {
+        connection.release();
+    }
+
+};
+
 module.exports = {
-    login
+    login,
+    signup
 };

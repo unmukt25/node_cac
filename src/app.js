@@ -41,14 +41,6 @@ app.use(express.urlencoded({ extended: true }));
 /* Routes */
 app.use("/api", routes);
 
-/* Health Check */
-app.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "CAC API Running"
-    });
-});
-
 /* 404 */
 app.use((req, res) => {
     res.status(404).json({
@@ -59,5 +51,13 @@ app.use((req, res) => {
 
 // Global Error Handler
 app.use(errorHandler);
+
+/* Health Check */
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "CAC API Running"
+    });
+});
 
 module.exports = app;
