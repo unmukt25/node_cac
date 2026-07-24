@@ -49,9 +49,6 @@ app.use((req, res) => {
     });
 });
 
-// Global Error Handler
-app.use(errorHandler);
-
 /* Health Check */
 app.get("/", (req, res) => {
     res.json({
@@ -59,5 +56,8 @@ app.get("/", (req, res) => {
         message: "CAC API Running"
     });
 });
+
+// Global Error Handler (must be at the end of the app.js just before exporting module)
+app.use(errorHandler);
 
 module.exports = app;
