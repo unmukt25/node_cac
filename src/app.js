@@ -38,22 +38,23 @@ app.use(express.urlencoded({ extended: true }));
     }
 })();
 
+/* Health Check */
+app.use("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "CAC API Running"
+    });
+});
+
 /* Routes */
 app.use("/api", routes);
+
 
 /* 404 */
 app.use((req, res) => {
     res.status(404).json({
         success: false,
         message: "API Not Found"
-    });
-});
-
-/* Health Check */
-app.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "CAC API Running"
     });
 });
 
