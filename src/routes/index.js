@@ -18,10 +18,8 @@ router.get("/", (req, res) => {
 });
 
 // Feature Routes
-router.use("/upload", 
-            authenticate,
-            uploadRoutes);
-// router.use("/report", reportRoutes);
+router.use("/upload", authenticate, uploadRoutes);
+router.use("/report", reportRoutes);
 // router.use("/download", downloadRoutes);
 router.use("/auth", authRoutes);
 

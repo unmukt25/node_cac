@@ -38,8 +38,8 @@ app.use(express.urlencoded({ extended: true }));
     }
 })();
 
-/* Health Check */
-app.use("/", (req, res) => {
+/* Health Check. Use  app.all or place this after routes and use app.use*/
+app.all("/", (req, res) => {
     res.json({
         success: true,
         message: "CAC API Running"
